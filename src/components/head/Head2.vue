@@ -1,11 +1,11 @@
 <!-- 头部组件样式2 -->
 <template>
 <div class="head_home">
-  <router-link to='/'>智码</router-link>
-  <router-link to="/projects">项目</router-link>
+  <!-- <router-link to='/'>智码</router-link>
+  <router-link to="/projects">项目</router-link> -->
   <router-link to="/ver">估算</router-link>
-  <a href="http://172.16.101.90:8080" title="测试" target="_blank">代码托管</a>
-  <a>帮助</a>
+  <!-- <a href="http://172.16.101.90:8080" title="测试" target="_blank">代码托管</a>
+  <a>帮助</a> -->
 
   <div class="head_center">
     <el-dropdown>
