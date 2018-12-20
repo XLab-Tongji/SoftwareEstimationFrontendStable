@@ -12,7 +12,10 @@
           </div></el-col>
           <el-col :span="16"><div class="grid-content bg-white">
             <el-radio-group v-model="radio.val" v-for="t in radio.vals" :key="t.value" style="margin-right:10px">
+            <el-tooltip placement="top">
+              <div slot="content">{{t.desc}}</div>
               <el-radio :label=t.value></el-radio>
+            </el-tooltip>
             </el-radio-group>
           </div></el-col>
         </el-row>
@@ -188,25 +191,25 @@
                         name:"开发类型",
                         val:"",
                         vals:[
-                            {value:"New Development"},
-                            {value:"Enhencement"},
-                            {value:"Re-development"}
+                            {value:"New Development", desc:"新开发项目"},
+                            {value:"Enhencement", desc:"增强项目"},
+                            {value:"Re-development", desc:"重开发项目"}
                         ]
                     },{
                         name:"开发平台",
                         val:"",
                         vals:[
-                            {value:"Personal computer"},
-                            {value:"Mainframe"},
-                            {value:"Mid-range"}
+                            {value:"Personal computer", desc:"个人电脑"},
+                            {value:"Mainframe", desc:"大型机"},
+                            {value:"Mid-range", desc:"中型机"}
                         ]
                     },{
                         name:"开发语言",
                         val:"",
                         vals:[
-                            {value:"3GL"},
-                            {value:"4GL"},
-                            {value:"ApG"}
+                            {value:"3GL", desc:"如：COBOL, C/C++, Java, JavaScript, PHP"},
+                            {value:"4GL", desc:"如：SQL"},
+                            {value:"ApG", desc:"代码生成器（Application Generator）"}
                         ]
                     },{
                         name:"是否使用数据库",

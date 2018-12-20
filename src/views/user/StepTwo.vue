@@ -52,7 +52,7 @@
                             <el-collapse-item>
                                 <template slot="title">
                                     <div class="input-box">
-                                        <el-input v-on:keyup.space.native="lockStep" v-on:keydown.space.native="lockStep" size="small" placeholder="请输入内容" v-model="step.name"  class="step-input">
+                                        <el-input v-on:keyup.space.native="lockStep" v-on:keydown.space.native="lockStep" size="small" placeholder="请详细输入步骤说明" v-model="step.name"  class="step-input">
                                             <template slot="prepend">Step{{indexout}}:</template>
                                         </el-input>
                                     </div>
@@ -355,7 +355,7 @@
                         isResize: true
                     },
                     {
-                        field: 'DET', title: 'DET', width: 300, titleAlign: 'center', columnAlign: 'center', isEdit: true,
+                        field: 'DET', title: 'DET(数据元素类型)', width: 300, titleAlign: 'center', columnAlign: 'center', isEdit: true,
                         isResize: true
                     },
                     {field: 'custome-adv', title: '',width: 40, titleAlign: 'center',columnAlign:'center',componentName:'table-operation',isResize:true}
@@ -370,7 +370,7 @@
                         isResize: true
                     },
                     {
-                        field: 'DET', title: 'DET', width: 300, titleAlign: 'center', columnAlign: 'center', isEdit: true,
+                        field: 'DET', title: 'DET(数据元素类型)', width: 300, titleAlign: 'center', columnAlign: 'center', isEdit: true,
                         isResize: true
                     },
 
