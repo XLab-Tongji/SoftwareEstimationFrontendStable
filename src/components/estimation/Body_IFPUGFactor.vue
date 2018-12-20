@@ -215,8 +215,8 @@
                         name:"是否使用数据库",
                         val:"",
                         vals:[
-                            {value:"Yes"},
-                            {value:"No"}
+                            {value:"Yes", desc:"如：MySQL, Oracle, MongoDB"},
+                            {value:"No", desc:"不使用任何数据库"}
                         ]
                     }
                 ],

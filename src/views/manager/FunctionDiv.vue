@@ -755,7 +755,6 @@
           this.tableData2.length = 0;
 
           for (var i = 0; i < res.body.estimationTransactionDatas.length; i++) {
-//            console.log(res.body.estimationTransactionDatas[i]);
             this.tableData1.push({
               "name": res.body.estimationTransactionDatas[i].name,
               "transactionType": res.body.estimationTransactionDatas[i].transactionType,
@@ -769,6 +768,8 @@
           }
 
           for (var i = 0; i < res.body.estimationFileDatas.length; i++) {
+            console.log("updateResult");
+            console.log(res.body.estimationFileDatas[i]);
             this.tableData2.push({
               "name": res.body.estimationFileDatas[i].name,
               "fileType": res.body.estimationFileDatas[i].fileType,
@@ -1222,10 +1223,7 @@
 
 
                     vue.tableData1.length=0;
-                    vue.tableData2.length=0;
-
                     for(var i=0;i<res.body.estimationTransactionDatas.length;i++){
-//                      console.log(res.body.estimationTransactionDatas[i]);
                       vue.tableData1.push({
                         "name": res.body.estimationTransactionDatas[i].name,
                         "transactionType": res.body.estimationTransactionDatas[i].transactionType,
@@ -1238,18 +1236,24 @@
                       })
                     }
 
-                    for(var i=0;i<res.body.estimationFileDatas.length;i++){
-                      vue.tableData2.push({
-                        "name": res.body.estimationFileDatas[i].name,
-                        "fileType": res.body.estimationFileDatas[i].fileType,
-                        "RET": res.body.estimationFileDatas[i].RET,
-                        "retNum": res.body.estimationFileDatas[i].RETNum,
-                        "DET": res.body.estimationFileDatas[i].DET,
-                        "detNum": res.body.estimationFileDatas[i].DETNum,
-                        "complex" : res.body.estimationFileDatas[i].complexity,
-                        "ufp" : res.body.estimationFileDatas[i].UFP
-                      })
+                    if (res.body.estimationFileDatas.length > 0){
+                        vue.tableData2.length=0;
+                        for(var i=0;i<res.body.estimationFileDatas.length;i++){
+                        console.log("updateResult");
+                        console.log(res.body.estimationFileDatas[i]);
+                        vue.tableData2.push({
+                          "name": res.body.estimationFileDatas[i].name,
+                          "fileType": res.body.estimationFileDatas[i].fileType,
+                          "RET": res.body.estimationFileDatas[i].RET,
+                          "retNum": res.body.estimationFileDatas[i].RETNum,
+                          "DET": res.body.estimationFileDatas[i].DET,
+                          "detNum": res.body.estimationFileDatas[i].DETNum,
+                          "complex" : res.body.estimationFileDatas[i].complexity,
+                          "ufp" : res.body.estimationFileDatas[i].UFP
+                        })
+                      }
                     }
+                    
 
                     vue.cur.id = p_node.id;
                     vue.rightnode = p_node;
@@ -1268,12 +1272,8 @@
 
 
                       vue.tableData1.length=0;
-                      vue.tableData2.length=0;
-
-
-
                       for(var i=0;i<res.body.estimationTransactionDatas.length;i++){
-                        console.log(res.body.estimationTransactionDatas[i]);
+                        // console.log(res.body.estimationTransactionDatas[i]);
                         vue.tableData1.push({
                           "name": res.body.estimationTransactionDatas[i].name,
                           "transactionType": res.body.estimationTransactionDatas[i].transactionType,
@@ -1286,18 +1286,24 @@
                         })
                       }
 
-                      for(var i=0;i<res.body.estimationFileDatas.length;i++){
-                        vue.tableData2.push({
-                          "name": res.body.estimationFileDatas[i].name,
-                          "fileType": res.body.estimationFileDatas[i].fileType,
-                          "RET": res.body.estimationFileDatas[i].RET,
-                          "retNum": res.body.estimationFileDatas[i].RETNum,
-                          "DET": res.body.estimationFileDatas[i].DET,
-                          "detNum": res.body.estimationFileDatas[i].DETNum,
-                          "complex" : res.body.estimationFileDatas[i].complexity,
-                          "ufp" : res.body.estimationFileDatas[i].UFP
-                        })
+                      if (!(res.body.estimationFileDatas.length == 1 && res.body.estimationFileDatas[0].name == "")){
+                          vue.tableData2.length=0;
+                          for(var i=0;i<res.body.estimationFileDatas.length;i++){
+                            console.log("getTransaction0");
+                            console.log(res.body.estimationFileDatas[i]);
+                            vue.tableData2.push({
+                              "name": res.body.estimationFileDatas[i].name,
+                              "fileType": res.body.estimationFileDatas[i].fileType,
+                              "RET": res.body.estimationFileDatas[i].RET,
+                              "retNum": res.body.estimationFileDatas[i].RETNum,
+                              "DET": res.body.estimationFileDatas[i].DET,
+                              "detNum": res.body.estimationFileDatas[i].DETNum,
+                              "complex" : res.body.estimationFileDatas[i].complexity,
+                              "ufp" : res.body.estimationFileDatas[i].UFP
+                            })
+                        }
                       }
+                      
 
 
 
@@ -1376,12 +1382,7 @@
 
 
                       vue.tableData1.length=0;
-                      vue.tableData2.length=0;
-
-
-
                       for(var i=0;i<res.body.estimationTransactionDatas.length;i++){
-                        console.log(res.body.estimationTransactionDatas[i]);
                         vue.tableData1.push({
                           "name": res.body.estimationTransactionDatas[i].name,
                           "transactionType": res.body.estimationTransactionDatas[i].transactionType,
@@ -1394,18 +1395,24 @@
                         })
                       }
 
-                      for(var i=0;i<res.body.estimationFileDatas.length;i++){
-                        vue.tableData2.push({
-                          "name": res.body.estimationFileDatas[i].name,
-                          "fileType": res.body.estimationFileDatas[i].fileType,
-                          "RET": res.body.estimationFileDatas[i].ret,
-                          "retNum": res.body.estimationFileDatas[i].retnum,
-                          "DET": res.body.estimationFileDatas[i].det,
-                          "detNum": res.body.estimationFileDatas[i].detnum,
-                          "complex" : res.body.estimationFileDatas[i].complexity,
-                          "ufp" : res.body.estimationFileDatas[i].ufp
-                        })
+                      if (!(res.body.estimationFileDatas.length == 1 && res.body.estimationFileDatas[0].name == "")){
+                          vue.tableData2.length=0;
+                          for(var i=0;i<res.body.estimationFileDatas.length;i++){
+                            console.log("getTransaction1");
+                            console.log(res.body.estimationFileDatas[i]);
+                            vue.tableData2.push({
+                              "name": res.body.estimationFileDatas[i].name,
+                              "fileType": res.body.estimationFileDatas[i].fileType,
+                              "RET": res.body.estimationFileDatas[i].ret,
+                              "retNum": res.body.estimationFileDatas[i].retnum,
+                              "DET": res.body.estimationFileDatas[i].det,
+                              "detNum": res.body.estimationFileDatas[i].detnum,
+                              "complex" : res.body.estimationFileDatas[i].complexity,
+                              "ufp" : res.body.estimationFileDatas[i].ufp
+                            })
+                        }
                       }
+                      
 
 
 
@@ -1492,6 +1499,7 @@
                 "tId": vue.cur.id
               }
 
+
               vue.$http.post(vue.url + '/getTransaction/' + vue.$route.params.rId, msg).then(res => {
                 //alert("success")
                   console.log(res.body);
@@ -1500,14 +1508,8 @@
                 vue.eifStr = res.body.nameOfEIF;
 
 
-
                 vue.tableData1.length=0;
-                vue.tableData2.length=0;
-
-
-
                   for(var i=0;i<res.body.estimationTransactionDatas.length;i++){
-                    console.log(res.body.estimationTransactionDatas[i]);
                     vue.tableData1.push({
                       "name": res.body.estimationTransactionDatas[i].name,
                       "transactionType": res.body.estimationTransactionDatas[i].transactionType,
@@ -1520,7 +1522,11 @@
                     })
                   }
 
+                if (!(res.body.estimationFileDatas.length == 1 && res.body.estimationFileDatas[0].name == "")){
+                  vue.tableData2.length=0;
                   for(var i=0;i<res.body.estimationFileDatas.length;i++){
+                    console.log("getTransaction2");
+                    console.log(res.body.estimationFileDatas[i]);
                     vue.tableData2.push({
                       "name": res.body.estimationFileDatas[i].name,
                       "fileType": res.body.estimationFileDatas[i].fileType,
@@ -1532,9 +1538,9 @@
                       "ufp" : res.body.estimationFileDatas[i].UFP
                     })
                   }
-
-
-
+                }
+                
+                  
 
                 if (res.body.steps.length === 0) {
                   vue.addStep();
@@ -1725,42 +1731,43 @@
 //            }
           }
 
+          // init elf and ilf
+          console.log("init elf and ilf");
+          this.tableData2.length = 0;
+          for (var i = 0; i < treeMsg.ilfTable.length; i++) {
+            console.log("treeMsg.ilfTable.length:", treeMsg.ilfTable.length);
+            this.tableData2.push({
+                        "name": treeMsg.ilfTable[i].fileName,
+                        "fileType": "ILF",
+                        "RET": treeMsg.ilfTable[i].fileName,
+                        "retNum": 1,
+                        "DET": treeMsg.ilfTable[i].allDET,
+                        "detNum": treeMsg.ilfTable[i].allDET.trim().split(' ').length,
+                        "complex" : 0,
+                        "ufp" : 0
+                      })
+
+          }
+
+          for (var i = 0; i < treeMsg.eifTable.length; i++) {
+            console.log("treeMsg.eifTable.length:", );
+            this.tableData2.push({
+                        "name": treeMsg.eifTable[i].fileName,
+                        "fileType": "EIF",
+                        "RET": treeMsg.eifTable[i].fileName,
+                        "retNum": 1,
+                        "DET": treeMsg.eifTable[i].allDET,
+                        "detNum": treeMsg.eifTable[i].allDET.trim().split(' ').length,
+                        "complex" : 0,
+                        "ufp" : 0
+                      })
+          }
+          console.log(this.tableData2);
 
         }, res => {
           //alert("fail");
         });
 
-
-//        console.log(treeMsg);
-
-//        var treeMsg = {
-//          "name" : "root",
-//          "id" : "node_0",
-//          "childFolders" : [{
-//            "name" : "用户系统",
-//            "id" : "node_1",
-//            "childFolders" :[],
-//            "childFiles":[{
-//              "name" : "登陆",
-//              "id" : "node_4"
-//            },{
-//              "name" : "注册",
-//              "id" : "node_5"
-//            }]
-//          },{
-//            "name" : "估算系统",
-//            "id" : "node_2",
-//            "childFolders" : [],
-//            "childFiles" : [{
-//              "name" : "第一步",
-//              "id" : "node_7"
-//            }]
-//          }],
-//          "childFiles" : [{
-//            "name" : "退出",
-//            "id" : "node_3"
-//          }]
-//        }
 
         function treeRecursion(vue, fatherNode, curNode) {
 
