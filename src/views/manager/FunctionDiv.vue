@@ -215,6 +215,12 @@
                 ></v-table>
 
 
+          <div style="margin-top: 5px">
+            <p>注：DET (Data Element Types),指数据元素字段; RET (Record Element Types),指记录元素类型; UFP (Unadjusted Function Point),指未调整功能点</p>
+            </el-button>
+
+
+          </div>
           <div style="margin-top: 20px">
             <el-button type="primary " size="small"
                        @click.prevent="addRow">
@@ -318,11 +324,11 @@
             isResize: true
           },
           {
-            field: 'logicalFile', title: '逻辑文件', width: 90, titleAlign: 'center', columnAlign: 'center', isEdit: true,
+            field: 'logicalFile', title: '引用文件', width: 90, titleAlign: 'center', columnAlign: 'center', isEdit: true,
             isResize: true
           },
           {
-            field: 'fileNum', title: 'FTR数量', width: 60, titleAlign: 'center', columnAlign: 'center', isEdit: false,
+            field: 'fileNum', title: '引用文件数量', width: 60, titleAlign: 'center', columnAlign: 'center', isEdit: false,
             isResize: true
           },
           {
@@ -768,8 +774,6 @@
           }
 
           for (var i = 0; i < res.body.estimationFileDatas.length; i++) {
-            console.log("updateResult");
-            console.log(res.body.estimationFileDatas[i]);
             this.tableData2.push({
               "name": res.body.estimationFileDatas[i].name,
               "fileType": res.body.estimationFileDatas[i].fileType,
@@ -1239,8 +1243,6 @@
                     if (res.body.estimationFileDatas.length > 0){
                         vue.tableData2.length=0;
                         for(var i=0;i<res.body.estimationFileDatas.length;i++){
-                        console.log("updateResult");
-                        console.log(res.body.estimationFileDatas[i]);
                         vue.tableData2.push({
                           "name": res.body.estimationFileDatas[i].name,
                           "fileType": res.body.estimationFileDatas[i].fileType,
@@ -1289,8 +1291,6 @@
                       if (!(res.body.estimationFileDatas.length == 1 && res.body.estimationFileDatas[0].name == "")){
                           vue.tableData2.length=0;
                           for(var i=0;i<res.body.estimationFileDatas.length;i++){
-                            console.log("getTransaction0");
-                            console.log(res.body.estimationFileDatas[i]);
                             vue.tableData2.push({
                               "name": res.body.estimationFileDatas[i].name,
                               "fileType": res.body.estimationFileDatas[i].fileType,
@@ -1398,8 +1398,6 @@
                       if (!(res.body.estimationFileDatas.length == 1 && res.body.estimationFileDatas[0].name == "")){
                           vue.tableData2.length=0;
                           for(var i=0;i<res.body.estimationFileDatas.length;i++){
-                            console.log("getTransaction1");
-                            console.log(res.body.estimationFileDatas[i]);
                             vue.tableData2.push({
                               "name": res.body.estimationFileDatas[i].name,
                               "fileType": res.body.estimationFileDatas[i].fileType,
@@ -1525,8 +1523,6 @@
                 if (!(res.body.estimationFileDatas.length == 1 && res.body.estimationFileDatas[0].name == "")){
                   vue.tableData2.length=0;
                   for(var i=0;i<res.body.estimationFileDatas.length;i++){
-                    console.log("getTransaction2");
-                    console.log(res.body.estimationFileDatas[i]);
                     vue.tableData2.push({
                       "name": res.body.estimationFileDatas[i].name,
                       "fileType": res.body.estimationFileDatas[i].fileType,
@@ -1735,7 +1731,6 @@
           console.log("init elf and ilf");
           this.tableData2.length = 0;
           for (var i = 0; i < treeMsg.ilfTable.length; i++) {
-            console.log("treeMsg.ilfTable.length:", treeMsg.ilfTable.length);
             this.tableData2.push({
                         "name": treeMsg.ilfTable[i].fileName,
                         "fileType": "ILF",
@@ -1750,7 +1745,6 @@
           }
 
           for (var i = 0; i < treeMsg.eifTable.length; i++) {
-            console.log("treeMsg.eifTable.length:", );
             this.tableData2.push({
                         "name": treeMsg.eifTable[i].fileName,
                         "fileType": "EIF",
@@ -1762,7 +1756,7 @@
                         "ufp" : 0
                       })
           }
-          console.log(this.tableData2);
+
 
         }, res => {
           //alert("fail");
